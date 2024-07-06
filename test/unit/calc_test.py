@@ -50,6 +50,21 @@ class TestCalculate(unittest.TestCase):
         self.assertEqual(0, self.calc.multiply(1, 0))
         self.assertEqual(0, self.calc.multiply(-1, 0))
         self.assertEqual(-2, self.calc.multiply(-1, 2))
+    
+    def test_square(self):
+        self.assertRaises(TypeError, self.calc.squarert, "0")        
+
+    def test_square_method_returns_correct_result(self):
+        self.assertEqual(2, self.calc.squarert(4))
+        self.assertEqual(3, self.calc.squarert(9))
+        self.assertEqual(4, self.calc.squarert(16))
+        self.assertEqual(5, self.calc.squarert(25))
+
+    def test_lg10(self):
+        self.assertRaises(TypeError, self.calc.lg10, "0")       
+
+    def test_lg10_method_returns_correct_result(self):
+        self.assertEqual(1.0, self.calc.lg10(10))
 
 
 if __name__ == "__main__":  # pragma: no cover
